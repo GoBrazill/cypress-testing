@@ -23,7 +23,7 @@ describe('login', () => {
     cy.visit('http://localhost:3000')
     cy.get('#email').type('4DM@gmail.com')
     cy.contains('button', 'Entrar').click()
-    cy.contains('Você precisa de uma senha para entrar! 🔒').should('be.visible')
+    cy.contains('Você precisa de uma senha para entrar! 🔒').should('be.visible').and('have.css', 'color','rgb(246, 113, 113)')
   })
   it('Login senha incorreta', () => {
     cy.visit('http://localhost:3000')
