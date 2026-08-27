@@ -44,4 +44,11 @@ describe('form', () => {
 
     cy.contains('h3', 'Sucesso!').should('be.visible')
   })
+    it('Formulário em branco', () => {
+    cy.contains('button[type=submit]', 'Enviar formulário').click()
+
+    cy.contains('Digite nome e sobrenome')
+    cy.contains('Informe um email válido')
+    cy.contains('Você precisa aceitar os termos de uso')
+  })
 })
